@@ -1,0 +1,74 @@
+﻿<!-- <h2>Original Code login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && username.errors }" />
+        <div *ngIf="submitted && username.errors" class="invalid-feedback">
+            <div *ngIf="username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && password.errors }" />
+        <div *ngIf="submitted && password.errors" class="invalid-feedback">
+            <div *ngIf="password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+        </button>
+        <a routerLink="/register" class="btn btn-link">Register</a>
+    </div>
+</form> -->
+
+
+<h2>Login</h2>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" ngModel name="Username" class="form-control" />
+        
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" ngModel  name="password" class="form-control" />
+       
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            
+            Login
+        </button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a routerLink="/register" class="btn btn-secondary">Register</a>
+    </div>
+</form>
+
+<html>
+<style>
+table, th, td {
+  border:1px outset green;
+  
+}
+</style>
+<body>
+
+
+<table style="width:100%">
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+    
+  </tr>
+  <tr>
+    <td>{{UserData.Username}}</td>
+    <td>{{UserData.password}}</td>
+   
+  </tr>
+  
+</table>
+
+
+</body>
+</html>

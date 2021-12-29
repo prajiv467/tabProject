@@ -1,0 +1,112 @@
+﻿<!-- <h2>Register</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && firstName.errors }" />
+        <div *ngIf="submitted && firstName.errors" class="invalid-feedback">
+            <div *ngIf="firstName.errors.required">First Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && lastName.errors }" />
+        <div *ngIf="submitted && lastName.errors" class="invalid-feedback">
+            <div *ngIf="lastName.errors.required">Last Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && username.errors }" />
+        <div *ngIf="submitted && username.errors" class="invalid-feedback">
+            <div *ngIf="username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && password.errors }" />
+        <div *ngIf="submitted && password.errors" class="invalid-feedback">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Register
+        </button>
+        <a routerLink="/login" class="btn btn-link">Cancel</a>
+    </div>
+</form> -->
+
+
+
+<h2 class="center" >Registration Form</h2>
+<form  #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" class="form-control"  ngModel/>
+        <!-- <div *ngIf="submitted && firstName.errors" class="invalid-feedback">
+            <div *ngIf="firstName.errors.required">First Name is required</div>
+        </div> -->
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" class="form-control" ngModel/>
+        <!-- <div *ngIf="submitted && lastName.errors" class="invalid-feedback">
+            <div *ngIf="lastName.errors.required">Last Name is required</div>
+        </div> -->
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="userName" class="form-control"  ngModel/>
+        <!-- <div *ngIf="submitted && username.errors" class="invalid-feedback">
+            <div *ngIf="username.errors.required">Username is required</div>
+        </div> -->
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control"  ngModel/>
+        <!-- <div *ngIf="submitted && password.errors" class="invalid-feedback">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+        </div> -->
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <!-- <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span> -->
+            Register
+        </button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a routerLink="/login" class="btn btn-danger">Cancel</a>
+    </div>
+</form>
+
+<html>
+<style>
+    table, th, td {
+      border:1px outset green;
+      
+    }
+    </style>
+    <body>
+    
+    
+    <table style="width:100%">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+        <th>Password</th>
+      </tr>
+      <tr>
+        <td>{{UserData.firstName}}</td>
+        <td>{{UserData.lastName}}</td>
+        <td>{{UserData.userName}}</td>
+        <td>{{UserData.password}}</td>
+       
+      </tr>
+      
+    </table>
+    
+    
+    </body>
+    </html>
